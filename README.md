@@ -4,7 +4,7 @@ Laboratory exercises for the master course "Embedded Electronic
 Systems for Automotive Applications" (code МЕSE03) 
 at Technical University - Sofia.  
 
-ПВСАЕ  
+ПВАЕС  
 
 Проектиране на вградени автомобилни електронни системи - лабораторни 
 упражнения.    
