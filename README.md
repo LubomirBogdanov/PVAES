@@ -21,3 +21,5 @@ at Technical University - Sofia.
 5. Работа с Xilinx Vivado и Vitis. Синтезиране на микропроцесорна
 система върху FPGA. Работа с I 2 C модул. Мултиплексиране на
 изводите с Constraints файл.  
+6. Работа с Xilinx Vivado и Vitis. Синтезиране на микропроцесорна
+система върху FPGA. Работа със SPI модул.  
