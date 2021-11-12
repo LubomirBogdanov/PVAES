@@ -4,10 +4,7 @@ Laboratory exercises for the master course "Embedded Electronic
 Systems for Automotive Applications" (code МЕSE03) 
 at Technical University - Sofia.  
 
-ПВАЕС  
-
-Проектиране на вградени автомобилни електронни системи - лабораторни 
-упражнения.    
+Проектиране на вградени автомобилни електронни системи (ПВАЕС) - лабораторни упражнения.  
 ===================================================================
 1. Работа с Xilinx Vivado и Vitis. Синтезиране на микропроцесорна система върху FPGA.  
 Работа с входно-изходен порт GPIO.  
