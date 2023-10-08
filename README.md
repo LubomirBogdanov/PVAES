@@ -32,3 +32,4 @@ at Technical University - Sofia.
 13. Работа с Xilinx Vivado и Vitis. Споделяне на модул посредством хардуерен мютекс (mutex) в многопроцесорна система.  
 14. Работа с Xilinx Vivado и Vitis. Споделяне на външна DDR RAM памет в многопроцесорна система.  
 15. Работа с Xilinx Vivado и Vitis. Mногопроцесорна система с персонализиран IP модул на Verilog. Синхронизация чрез прекъсвания.  
+16. Работа с Xilinx Vivado и Vitis. Асиметрична мултипроцесорна система (AMP) с Linux и с baremetal фърмуер.  

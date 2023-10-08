@@ -1,0 +1,23 @@
+Sync hardware description from Vivado export to PetaLinux BSP project:
+  $ cd <Vivado_Export_to_SDK_Directory>
+  $ petalinux-config --get-hw-description
+  It will sync up the XSA file  from <Vivado_Export_to_SDK_Directory>
+  to project-spec/hw-description/ directory.
+
+Sync hardware description inside PetaLinux project but outside Vivado export to SDK directory:
+  $ petalinux-config --get-hw-description=<Vivado_Export_to_SDK_Directory>
+
+  If more than one XSA files in <Vivado_Export_to_SDK_Directory> specify the exact file path using
+  $ petalinux-config --get-hw-description <Vivado_Export_to_SDK_Directory>/system.xsa
+
+Configure PetaLinux project:
+
+Configure subsystem level configuration:
+  $ petalinux-config
+
+Configure kernel:
+  $ petalinux-config -c kernel
+
+Configure rootfs:
+  $ petalinux-config -c rootfs
+
