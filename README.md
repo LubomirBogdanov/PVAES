@@ -35,3 +35,4 @@ at Technical University - Sofia.
 16. Работа с Xilinx Vivado и Vitis. Асиметрична мултипроцесорна система (AMP) с Linux и с baremetal фърмуер.  
 17. TO DO: add Linux kernel modules  
 18. Работа с Xilinx Vivado и Vitis. Makefile и Menuconfig. Йерархични Makefile-ове. Документиране на сорс код с Doxygen.  
+19. Работа с Xilinx Vivado и Vitis. Kроскомпилатор GCC и кросасемблер AS за микропроцесори. Дисасемблиране на обектов код с Objdump.  
