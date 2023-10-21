@@ -1,0 +1,404 @@
+
+./debug/main.o:     file format elf32-microblazeel
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+#include "sleep.h"
+#include "autoconf.h"
+
+extern float asm_rms(float dig3, float dig2, float dig1, float dig0);
+
+int main(void){
+   0:	3021ffc8 	addik	r1, r1, -56
+   4:	f9e10000 	swi	r15, r1, 0
+   8:	fa610034 	swi	r19, r1, 52
+   c:	12610000 	addk	r19, r1, r0
+	float val3 = 4.002503;
+  10:	b0004080 	imm	16512
+  14:	30601481 	addik	r3, r0, 5249
+  18:	f873001c 	swi	r3, r19, 28
+	float val2 = 4.233456;
+  1c:	b0004087 	imm	16519
+  20:	30607879 	addik	r3, r0, 30841
+  24:	f8730020 	swi	r3, r19, 32
+	float val1 = 4.789317;
+  28:	b0004099 	imm	16537
+  2c:	30604216 	addik	r3, r0, 16918
+  30:	f8730024 	swi	r3, r19, 36
+	float val0 = 4.220734;
+  34:	b0004087 	imm	16519
+  38:	30601041 	addik	r3, r0, 4161
+  3c:	f8730028 	swi	r3, r19, 40
+	float my_result;
+	volatile int i;
+	
+        led_init();
+  40:	b0000000 	imm	0
+  44:	b9f40000 	brlid	r15, 0
+  48:	80000000 	or	r0, r0, r0
+        uart_init();  
+  4c:	b0000000 	imm	0
+  50:	b9f40000 	brlid	r15, 0
+  54:	80000000 	or	r0, r0, r0
+
+	my_result = asm_rms(val3, val2, val1, val0);
+  58:	e9130028 	lwi	r8, r19, 40
+  5c:	e8f30024 	lwi	r7, r19, 36
+  60:	e8d30020 	lwi	r6, r19, 32
+  64:	e8b3001c 	lwi	r5, r19, 28
+  68:	b0000000 	imm	0
+  6c:	b9f40000 	brlid	r15, 0
+  70:	80000000 	or	r0, r0, r0
+  74:	f873002c 	swi	r3, r19, 44
+
+	//Expected output: 4.321294158
+	printf("The result is --> %12.6f\n", my_result);
+  78:	e8b3002c 	lwi	r5, r19, 44
+  7c:	b0000000 	imm	0
+  80:	b9f40000 	brlid	r15, 0
+  84:	80000000 	or	r0, r0, r0
+  88:	10a40000 	addk	r5, r4, r0
+  8c:	10830000 	addk	r4, r3, r0
+  90:	10c40000 	addk	r6, r4, r0
+  94:	10e50000 	addk	r7, r5, r0
+  98:	b0000000 	imm	0
+  9c:	30a00000 	addik	r5, r0, 0
+  a0:	b0000000 	imm	0
+  a4:	b9f40000 	brlid	r15, 0
+  a8:	80000000 	or	r0, r0, r0
+
+	while (1){
+        	led_set();
+  ac:	b0000000 	imm	0
+  b0:	b9f40000 	brlid	r15, 0
+  b4:	80000000 	or	r0, r0, r0
+       	usleep(1000000);
+  b8:	b000000f 	imm	15
+  bc:	30a04240 	addik	r5, r0, 16960
+  c0:	b0000000 	imm	0
+  c4:	b9f40000 	brlid	r15, 0
+  c8:	80000000 	or	r0, r0, r0
+        	led_clear();
+  cc:	b0000000 	imm	0
+  d0:	b9f40000 	brlid	r15, 0
+  d4:	80000000 	or	r0, r0, r0
+        	usleep(1000000);
+  d8:	b000000f 	imm	15
+  dc:	30a04240 	addik	r5, r0, 16960
+  e0:	b0000000 	imm	0
+  e4:	b9f40000 	brlid	r15, 0
+  e8:	80000000 	or	r0, r0, r0
+        	led_set();
+  ec:	b800ffc0 	bri	-64		// ac
+
+Disassembly of section .rodata:
+
+00000000 <.rodata>:
+   0:	20656854 	addi	r3, r5, 26708
+   4:	75736572 		r11, r19, r12
+   8:	6920746c 	addli	r9, 29804
+   c:	2d2d2073 	rsubic	r9, r13, 8307
+  10:	3125203e 	addik	r9, r5, 8254
+  14:	66362e32 		r17, r22, r5
+  18:	Address 0x0000000000000018 is out of bounds.
+
+
+Disassembly of section .debug_frame:
+
+00000000 <.debug_frame>:
+int main(void){
+   0:	0000000c 		r0, r0, r0
+   4:	ffffffff 	sli	r31, r31, -1
+   8:	7f010003 		r24, r1, r0
+   c:	00010c0f 		r0, r1, r1
+	float val3 = 4.002503;
+  10:	00000024 		r0, r0, r0
+	...
+	float val2 = 4.233456;
+  1c:	000000f0 		r0, r0, r0
+  20:	00000404 		r0, r0, r0
+  24:	04380e00 	neg	r1, r24
+	float val1 = 4.789317;
+  28:	00000008 		r0, r0, r0
+  2c:	0493388f 	neg	r4, r19
+  30:	00000404 		r0, r0, r0
+	float val0 = 4.220734;
+  34:	00130d00 		r0, r19, r1
+
+Disassembly of section .debug_info:
+
+00000000 <.debug_info>:
+int main(void){
+   0:	00000169 		r0, r0, r0
+   4:	04010005 	neg	r0, r1
+   8:	
+Disassembly of section .debug_abbrev:
+
+00000000 <.debug_abbrev>:
+   0:	0b002401 		r24, r0, r4
+   4:	030b3e0b 		r24, r11, r7
+   8:	0200000e 		r16, r0, r0
+   c:	13490005 		r26, r9, r0
+	float val3 = 4.002503;
+  10:	34030000 	rsubik	r0, r3, 0
+  14:	3a0e0300 	addikc	r16, r14, 768
+  18:	0b3b0121 		r25, r27, r0
+	float val2 = 4.233456;
+  1c:	49082139 		r8, r8, r4
+  20:	00180213 		r0, r24, r0
+  24:	002e0400 		r1, r14, r0
+	float val1 = 4.789317;
+  28:	0e03193f 		r16, r3, r3
+  2c:	0b3b0b3a 		r25, r27, r1
+  30:	27062139 	rsubi	r24, r6, 8505
+	float val0 = 4.220734;
+  34:	00193c19 		r0, r25, r7
+  38:	012e0500 		r9, r14, r0
+  3c:	0e03193f 		r16, r3, r3
+        led_init();
+  40:	0b3b0b3a 		r25, r27, r1
+  44:	19270b39 		r9, r7, r1
+  48:	193c1349 		r9, r28, r2
+        uart_init();  
+  4c:	00001301 		r0, r0, r2
+  50:	25011106 	rsubi	r8, r1, 4358
+  54:	030b130e 		r24, r11, r2
+	my_result = asm_rms(val3, val2, val1, val0);
+  58:	111f1b1f 		r8, r31, r3
+  5c:	10061201 		r0, r6, r2
+  60:	07000017 	neg	r24, r0
+  64:	0b0b0024 		r24, r11, r0
+  68:	08030b3e 		r0, r3, r1
+  6c:	35080000 	rsubik	r8, r8, 0
+  70:	00134900 	addl	r0, r19, r9
+  74:	00260900 	addl	r1, r6, r1
+	printf("The result is --> %12.6f\n", my_result);
+  78:	00001349 		r0, r0, r2
+  7c:	0300160a 		r24, r0, r2
+  80:	3b0b3a0e 	addikc	r24, r11, 14862
+  84:	490b390b 		r8, r11, r7
+  88:	0b000013 		r24, r0, r0
+  8c:	0b0b000f 		r24, r11, r0
+  90:	00001349 		r0, r0, r2
+  94:	3f012e0c 	rsubikc	r24, r1, 11788
+  98:	3a0e0319 	addikc	r16, r14, 793
+  9c:	390b3b0b 	addikc	r8, r11, 15115
+  a0:	3c19270b 	rsubikc	r0, r25, 9995
+  a4:	00130119 		r0, r19, r0
+  a8:	00180d00 		r0, r24, r1
+        	led_set();
+  ac:	2e0e0000 	rsubic	r16, r14, 0
+  b0:	03193f01 		r24, r25, r7
+  b4:	3b0b3a0e 	addikc	r24, r11, 14862
+       	usleep(1000000);
+  b8:	270b390b 	rsubi	r24, r11, 14603
+  bc:	11134919 		r8, r19, r9
+  c0:	40061201 		r0, r6, r2
+  c4:	00197c18 		r0, r25, r15
+  c8:	00340f00 		r1, r20, r1
+        	led_clear();
+  cc:	0b3a0803 		r25, r26, r1
+  d0:	0b390b3b 		r25, r25, r1
+  d4:	18021349 		r0, r2, r2
+        	usleep(1000000);
+  d8:	Address 0x00000000000000d8 is out of bounds.
+
+
+Disassembly of section .debug_aranges:
+
+00000000 <.debug_aranges>:
+int main(void){
+   0:	0000001c 		r0, r0, r0
+   4:	00000002 		r0, r0, r0
+   8:	00040000 	add	r0, r4, r0
+	...
+	float val3 = 4.002503;
+  14:	000000f0 		r0, r0, r0
+	...
+
+Disassembly of section .debug_line:
+
+00000000 <.debug_line>:
+int main(void){
+   0:	000000f5 		r0, r0, r0
+   4:	00040005 		r0, r4, r0
+   8:	00000053 		r0, r0, r0
+   c:	f6010101 	shi	r16, r1, 257
+	float val3 = 4.002503;
+  10:	01000df2 		r8, r0, r1
+  14:	00010101 		r0, r1, r0
+  18:	00010000 	add	r0, r1, r0
+	float val2 = 4.233456;
+  1c:	01010100 	addl	r8, r1, r0
+  20:	0006051f 		r0, r6, r0
+  24:	00520000 	add	r2, r18, r0
+	float val1 = 4.789317;
+  28:	006e0000 	add	r3, r14, r0
+  2c:	005e0000 	add	r2, r30, r0
+  30:	
+Disassembly of section .debug_str:
+
+00000000 <.debug_str>:
+int main(void){
+   0:	676e6f6c 	bslefi	r27, r14, 61, 44
+   4:	6e6f6c20 	necaget	r19, rfsl0
+   8:	6e692067 	cget	r19, rfsl7
+   c:	6e750074 	get	r19, rfsl4
+	float val3 = 4.002503;
+  10:	6e676973 	ncaget	r19, rfsl3
+  14:	69206465 	addli	r9, 25701
+  18:	6d00746e 	tnecget	r8, rfsl14
+	float val2 = 4.233456;
+  1c:	65725f79 	bsefi	r11, r18, 61, 57
+  20:	746c7573 		r3, r12, r14
+  24:	69616d00 	rsubli	r11, 27904
+	float val1 = 4.789317;
+  28:	656c006e 	bsrli	r11, r12, 46
+  2c:	6e695f64 	tneaget	r19, rfsl4
+  30:	6c007469 	tnecget	r0, rfsl9
+	float val0 = 4.220734;
+  34:	20676e6f 	addi	r3, r7, 28271
+  38:	69736e75 	andnli	r11, 28277
+  3c:	64656e67 	bslefi	r3, r5, 57, 39
+        led_init();
+  40:	746e6920 		r3, r14, r13
+  44:	6c617600 	tnecget	r3, rfsl0
+  48:	6f6c0031 	get	r27, rfsl1
+        uart_init();  
+  4c:	6c20676e 	necget	r1, rfsl14
+  50:	20676e6f 	addi	r3, r7, 28271
+  54:	69736e75 	andnli	r11, 28277
+	my_result = asm_rms(val3, val2, val1, val0);
+  58:	64656e67 	bslefi	r3, r5, 57, 39
+  5c:	746e6920 		r3, r14, r13
+  60:	6f6c6600 	necget	r27, rfsl0
+  64:	47007461 	bsll	r24, r0, r14
+  68:	4320554e 		r25, r0, r10
+  6c:	31203731 	addik	r9, r0, 14129
+  70:	2e322e31 	rsubic	r17, r18, 11825
+  74:	6d2d2030 	cget	r9, rfsl0
+	printf("The result is --> %12.6f\n", my_result);
+  78:	64726168 	bslefi	r3, r18, 5, 40
+  7c:	6f6c662d 	necget	r27, rfsl13
+  80:	2d207461 	rsubic	r9, r0, 29793
+  84:	2d6c786d 	rsubic	r11, r12, 30829
+  88:	616f6c66 	muli	r11, r15, 27750
+  8c:	6f632d74 	ecaget	r27, rfsl4
+  90:	7265766e 		r19, r5, r14
+  94:	6d2d2074 	cget	r9, rfsl4
+  98:	662d6c78 	bslefi	r17, r13, 49, 56
+  9c:	74616f6c 		r3, r1, r13
+  a0:	7271732d 		r19, r17, r14
+  a4:	6d2d2074 	cget	r9, rfsl4
+  a8:	7474696c 		r3, r20, r13
+        	led_set();
+  ac:	652d656c 	bslefi	r9, r13, 21, 44
+  b0:	6169646e 	muli	r11, r9, 25710
+  b4:	6d2d206e 	cget	r9, rfsl14
+       	usleep(1000000);
+  b8:	622d6c78 	muli	r17, r13, 27768
+  bc:	65727261 	bslefi	r11, r18, 9, 33
+  c0:	68732d6c 	andnli	r3, 11628
+  c4:	20746669 	addi	r3, r20, 26217
+  c8:	6c786d2d 	necaget	r3, rfsl13
+        	led_clear();
+  cc:	7461702d 		r3, r1, r14
+  d0:	6e726574 	necget	r19, rfsl4
+  d4:	6d6f632d 	ncget	r11, rfsl13
+        	usleep(1000000);
+  d8:	65726170 	bslefi	r11, r18, 5, 48
+  dc:	636d2d20 	muli	r27, r13, 11552
+  e0:	763d7570 		r17, r29, r14
+  e4:	302e3131 	addik	r1, r14, 12593
+  e8:	6e6d2d20 	ecaget	r19, rfsl0
+        	led_set();
+  ec:	6c782d6f 	ecaget	r3, rfsl15
+  f0:	666f732d 	bslefi	r19, r15, 12, 45
+  f4:	756d2d74 		r11, r13, r5
+  f8:	672d206c 	bslrli	r25, r13, 44
+  fc:	304f2d20 	addik	r2, r15, 11552
+ 100:	736e7500 		r27, r14, r14
+ 104:	656e6769 	bslefi	r11, r14, 29, 41
+ 108:	68632064 	rsublic	r3, 8292
+ 10c:	75007261 		r8, r0, r14
+ 110:	65656c73 	bslefi	r11, r5, 49, 51
+ 114:	68630070 	rsublic	r3, 112
+ 118:	70007261 		r0, r0, r14
+ 11c:	746e6972 		r3, r14, r13
+ 120:	75005f66 		r8, r0, r11
+ 124:	5f747261 		r27, r20, r14
+ 128:	74696e69 		r3, r9, r13
+ 12c:	6d736100 	ncget	r11, rfsl0
+ 130:	736d725f 		r27, r13, r14
+ 134:	6e6f6c00 	necaget	r19, rfsl0
+ 138:	6e692067 	cget	r19, rfsl7
+ 13c:	656c0074 	bsrli	r11, r12, 52
+ 140:	6c635f64 	tneaget	r3, rfsl4
+ 144:	00726165 		r3, r18, r12
+ 148:	726f6873 		r19, r15, r13
+ 14c:	6e752074 	cget	r19, rfsl4
+ 150:	6e676973 	ncaget	r19, rfsl3
+ 154:	69206465 	addli	r9, 25701
+ 158:	7300746e 		r24, r0, r14
+ 15c:	656e6769 	bslefi	r11, r14, 29, 41
+ 160:	68632064 	rsublic	r3, 8292
+ 164:	76007261 		r16, r0, r14
+ 168:	00326c61 		r1, r18, r13
+ 16c:	336c6176 	addik	r27, r12, 24950
+ 170:	6e6f6c00 	necaget	r19, rfsl0
+ 174:	6f642067 	cget	r27, rfsl7
+ 178:	656c6275 	bslefi	r11, r12, 9, 53
+ 17c:	4f4c5500 	cputd	r12, r10
+ 180:	7300474e 		r24, r0, r8
+ 184:	74726f68 		r3, r18, r13
+ 188:	746e6920 		r3, r14, r13
+ 18c:	64656c00 	bslefi	r3, r5, 48, 0
+ 190:	7465735f 		r3, r5, r14
+ 194:	6c617600 	tnecget	r3, rfsl0
+ 198:	Address 0x0000000000000198 is out of bounds.
+
+
+Disassembly of section .debug_line_str:
+
+00000000 <.debug_line_str>:
+int main(void){
+   0:	6e697270 	tncget	r19, rfsl0
+   4:	682f0074 		r1, r15, r0
+   8:	2f656d6f 	rsubic	r27, r5, 28015
+   c:	676f626c 	bslefi	r27, r15, 9, 44
+	float val3 = 4.002503;
+  10:	6f6e6164 	ncget	r27, rfsl4
+  14:	6f772f76 	ecaget	r27, rfsl6
+  18:	70736b72 		r3, r19, r13
+	float val2 = 4.233456;
+  1c:	73656361 		r27, r5, r12
+  20:	6c69782f 	tncaget	r3, rfsl15
+  24:	5f786e69 		r27, r24, r13
+	float val1 = 4.789317;
+  28:	6b726f77 	xorli	r27, 28535
+  2c:	63617073 	muli	r27, r1, 28787
+  30:	39312f65 	addikc	r9, r17, 12133
+	float val0 = 4.220734;
+  34:	0032315f 		r1, r18, r6
+  38:	2e64656c 	rsubic	r19, r4, 25964
+  3c:	69780068 		r11, r24, r0
+        led_init();
+  40:	79745f6c 		r11, r20, r11
+  44:	2e736570 	rsubic	r19, r19, 25968
+  48:	72700068 		r19, r16, r0
+        uart_init();  
+  4c:	2e746e69 	rsubic	r19, r20, 28265
+  50:	61750068 	muli	r11, r21, 104
+  54:	6d007472 	tnecget	r8, rfsl2
+	my_result = asm_rms(val3, val2, val1, val0);
+  58:	2e6e6961 	rsubic	r19, r14, 26977
+  5c:	6e690063 	get	r19, rfsl3
+  60:	64756c63 	bslefi	r3, r21, 49, 35
+  64:	6c730065 	get	r3, rfsl5
+  68:	2e706565 	rsubic	r19, r16, 25957
+  6c:	656c0068 	bsrli	r11, r12, 40
+  70:	61750064 	muli	r11, r21, 100
+  74:	682e7472 		r1, r14, r14
+	...

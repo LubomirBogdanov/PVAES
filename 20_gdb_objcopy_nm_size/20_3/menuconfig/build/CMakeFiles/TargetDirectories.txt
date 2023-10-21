@@ -1,0 +1,4 @@
+/home/lbogdanov/workspaces/xilinx_workspace/18_08/menuconfig/build/CMakeFiles/conf.dir
+/home/lbogdanov/workspaces/xilinx_workspace/18_08/menuconfig/build/CMakeFiles/mconf.dir
+/home/lbogdanov/workspaces/xilinx_workspace/18_08/menuconfig/build/CMakeFiles/zconf.dir
+/home/lbogdanov/workspaces/xilinx_workspace/18_08/menuconfig/build/lxdialog/CMakeFiles/lxdialog.dir

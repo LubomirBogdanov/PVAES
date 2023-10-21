@@ -1,0 +1,23 @@
+
+./debug/asm_rms.o:     file format elf32-microblazeel
+
+
+Disassembly of section .text:
+
+00000000 <divider>:
+   0:	40800000 	mul	r4, r0, r0
+
+00000004 <asm_rms>:
+   4:	58a52900 	fmul	r5, r5, r5
+   8:	58c63100 	fmul	r6, r6, r6
+   c:	58e73900 	fmul	r7, r7, r7
+  10:	59084100 	fmul	r8, r8, r8
+  14:	59253000 	fadd	r9, r5, r6
+  18:	59293800 	fadd	r9, r9, r7
+  1c:	59294000 	fadd	r9, r9, r8
+  20:	b0000000 	imm	0
+  24:	e9400000 	lwi	r10, r0, 0
+  28:	592a4980 	fdiv	r9, r10, r9
+  2c:	59290380 	fsqrt	r9, r9
+  30:	00604800 	add	r3, r0, r9
+  34:	b60f0008 	rtsd	r15, 8
