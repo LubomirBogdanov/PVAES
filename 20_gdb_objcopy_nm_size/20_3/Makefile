@@ -31,7 +31,7 @@ all: out_dir ./debug/main.elf ./debug/main.bin ./debug/main.lst ./debug/asm_rms.
 	${MAKE} -C print
 	
 ./debug/asm_rms.o: ./asm_rms.s
-	mb-as -mlittle-endian ./asm_rms.s -o ./debug/asm_rms.o
+	mb-as -g -mlittle-endian ./asm_rms.s -o ./debug/asm_rms.o
 		
 prog: ./debug/main.elf
 	xsct program_fpga.tcl
