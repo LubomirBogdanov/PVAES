@@ -1,0 +1,2 @@
+/usr/bin/ar cq liblxdialog.a  CMakeFiles/lxdialog.dir/checklist.c.o CMakeFiles/lxdialog.dir/inputbox.c.o CMakeFiles/lxdialog.dir/menubox.c.o CMakeFiles/lxdialog.dir/textbox.c.o CMakeFiles/lxdialog.dir/util.c.o CMakeFiles/lxdialog.dir/yesno.c.o
+/usr/bin/ranlib liblxdialog.a

@@ -37,3 +37,4 @@ at Technical University - Sofia.
 18. Работа с Xilinx Vivado и Vitis. Makefile и Menuconfig. Йерархични Makefile-ове. Документиране на сорс код с Doxygen.  
 19. Работа с Xilinx Vivado и Vitis. Kроскомпилатор GCC и кросасемблер AS за микропроцесори. Дисасемблиране на обектов код с Objdump.  
 20. Работа с Xilinx Vivado и Vitis. Работа с кросдебъгер GDB и сървърно приложение XSCT. Дебъгване на вградени системи през Интернет.  
+21. Работа с Xilinx Vivado и Vitis. Kрослинкер LD. Преместване на изпълнимия код в RAM. Статични и динамични библиотеки.  

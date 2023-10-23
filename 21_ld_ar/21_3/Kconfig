@@ -1,0 +1,27 @@
+mainmenu "Laboratory Excersice No18"
+
+comment "This menuconfig configures blink rate of a LED, as well as printf messages."
+
+choice
+	prompt "LED blink delay"
+	default GEN_CHOICE1
+	help
+		This is a help text that can expand over multiple lines and give some information about
+		the configuration parameter.
+
+	config LED_DELAY_50000_US
+		bool "50000 us"
+
+	config LED_DELAY_500000_US
+		bool "500000 us"
+
+	config LED_DELAY_2000000_US
+		bool "2000000 us"
+
+endchoice
+
+config PRINT_MESSAGE
+	string "Enter printf message here ..."
+
+
+
