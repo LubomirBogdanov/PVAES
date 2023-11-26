@@ -33,7 +33,7 @@ at Technical University - Sofia.
 14. Работа с Xilinx Vivado и Vitis. Споделяне на външна DDR RAM памет в многопроцесорна система.  
 15. Работа с Xilinx Vivado и Vitis. Mногопроцесорна система с персонализиран IP модул на Verilog. Синхронизация чрез прекъсвания.  
 16. Работа с Xilinx Vivado и Vitis. Асиметрична мултипроцесорна система (AMP) с Linux и с baremetal фърмуер.  
-17. TO DO: add Linux kernel modules  
+17. Работа с Petalinux. Драйвери за персонализиран модул в системи с Линукс.  
 18. Работа с Xilinx Vivado и Vitis. Makefile и Menuconfig. Йерархични Makefile-ове. Документиране на сорс код с Doxygen.  
 19. Работа с Xilinx Vivado и Vitis. Kроскомпилатор GCC и кросасемблер AS за микропроцесори. Дисасемблиране на обектов код с Objdump.  
 20. Работа с Xilinx Vivado и Vitis. Работа с кросдебъгер GDB и сървърно приложение XSCT. Дебъгване на вградени системи през Интернет. Анализ на стековата памет. Интрузивно и неинтрузивно профилиране.   
